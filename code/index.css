@@ -112,12 +112,12 @@
 
 .player1 {
     float: left;
-    margin-left: 200px;
+    margin-left: 300px;
 }
 
 .player2 {
     float: right;
-    margin-right: 200px;
+    margin-right: 300px;
 }
 
 .img {
