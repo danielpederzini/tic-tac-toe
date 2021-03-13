@@ -7,28 +7,487 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
 </head>
 
 <body style="margin: 0;">
     <center>
-       
-        <div class="background" id="background"> 
+
+        <div class="background" id="background">
             <br><br>
+
             <b class="title">Play Tic-Tac-Toe!</b>
+
+            <br><br>
+
+            <div class="player1" id="player1">
+                <br><br><br><br><br><br>
+                <b class="title">Player 1</b>
+                <br><br>
+                <img class="img" src="img/x.png">
+            </div>
+
+            <div class="player2" id="player2">
+                <br><br><br><br><br><br>
+                <b class="title">Player 2</b>
+                <br><br>
+                <img class="img" src="img/o.png">
+            </div>
+
+
             <div class="board" id="board">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div onclick="play_box1()" class="box1" id="box1">
+                    <img id="xbox1" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox1" class="img" src="img/o.png" style="display: none;">
+                </div>
+
+                <div onclick="play_box2()" class="box2" id="box2">
+                    <img id="xbox2" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox2" class="img" src="img/o.png" style="display: none;">
+                </div>
+
+                <div onclick="play_box3()" class="box3" id="box3">
+                    <img id="xbox3" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox3" class="img" src="img/o.png" style="display: none;">
+                </div>
+
+                <div onclick="play_box4()" class="box4" id="box4">
+                    <img id="xbox4" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox4" class="img" src="img/o.png" style="display: none;">
+                </div>
+
+                <div onclick="play_box5()" class="box5" id="box5">
+                    <img id="xbox5" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox5" class="img" src="img/o.png" style="display: none;">
+                </div>
+
+                <div onclick="play_box6()" class="box6" id="box6">
+                    <img id="xbox6" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox6" class="img" src="img/o.png" style="display: none;">
+                </div>
+
+                <div onclick="play_box7()" class="box7" id="box7">
+                    <img id="xbox7" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox7" class="img" src="img/o.png" style="display: none;">
+                </div>
+
+                <div onclick="play_box8()" class="box8" id="box8">
+                    <img id="xbox8" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox8" class="img" src="img/o.png" style="display: none;">
+                </div>
+
+                <div onclick="play_box9()" class="box9" id="box9">
+                    <img id="xbox9" class="img" src="img/x.png" style="display: none;">
+                    <img id="obox9" class="img" src="img/o.png" style="display: none;">
+                </div>
+            </div>
+            <div id="turns">
+                <b id="turnX" class="turnX">It's <span style="color: blue;">X</span> turn!</b>
+                <b id="turnO" class="turnO">It's <span style="color: green;">O</span> turn!</b>
             </div>
         </div>
     </center>
 </body>
 
 </html>
+
+<script>
+    // O valor 0 significa vez do X, e o valor 1 significa vez do O
+    var turn = 0;
+
+    // Verifica de quem é a vez, e se o quadrado estiver vazio faz uma jogada
+    function play_box1() {
+        if (turn == 0 && xbox1.style.display == 'none' && obox1.style.display == 'none') {
+            xbox1.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox1.style.display == 'none' && obox1.style.display == 'none') {
+                obox1.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+    function play_box2() {
+        if (turn == 0 && xbox2.style.display == 'none' && obox2.style.display == 'none') {
+            xbox2.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox2.style.display == 'none' && obox2.style.display == 'none') {
+                obox2.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+    function play_box3() {
+        if (turn == 0 && xbox3.style.display == 'none' && obox3.style.display == 'none') {
+            xbox3.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox3.style.display == 'none' && obox3.style.display == 'none') {
+                obox3.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+    function play_box4() {
+        if (turn == 0 && xbox4.style.display == 'none' && obox4.style.display == 'none') {
+            xbox4.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox4.style.display == 'none' && obox4.style.display == 'none') {
+                obox4.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+    function play_box5() {
+        if (turn == 0 && xbox5.style.display == 'none' && obox5.style.display == 'none') {
+            xbox5.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox5.style.display == 'none' && obox5.style.display == 'none') {
+                obox5.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+    function play_box6() {
+        if (turn == 0 && xbox6.style.display == 'none' && obox6.style.display == 'none') {
+            xbox6.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox6.style.display == 'none' && obox6.style.display == 'none') {
+                obox6.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+    function play_box7() {
+        if (turn == 0 && xbox7.style.display == 'none' && obox7.style.display == 'none') {
+            xbox7.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox7.style.display == 'none' && obox7.style.display == 'none') {
+                obox7.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+    function play_box8() {
+        if (turn == 0 && xbox8.style.display == 'none' && obox8.style.display == 'none') {
+            xbox8.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox8.style.display == 'none' && obox8.style.display == 'none') {
+                obox8.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+    function play_box9() {
+        if (turn == 0 && xbox9.style.display == 'none' && obox9.style.display == 'none') {
+            xbox9.style.display = 'block';
+            turn = 1;
+            turnX.style.display = 'none';
+            turnO.style.display = 'block';
+        }
+        else {
+            if (turn == 1 && xbox9.style.display == 'none' && obox9.style.display == 'none') {
+                obox9.style.display = 'block';
+                turn = 0;
+                turnX.style.display = 'block';
+                turnO.style.display = 'none';
+            }
+        }
+        if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox1.style.display == 'block' && xbox4.style.display == 'block' && xbox7.style.display == 'block' ||
+            xbox2.style.display == 'block' && xbox5.style.display == 'block' && xbox8.style.display == 'block' ||
+            xbox3.style.display == 'block' && xbox6.style.display == 'block' && xbox9.style.display == 'block' ||
+            xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
+            xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: blue;">X</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+        if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
+            obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
+            obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
+            obox1.style.display == 'block' && obox4.style.display == 'block' && obox7.style.display == 'block' ||
+            obox2.style.display == 'block' && obox5.style.display == 'block' && obox8.style.display == 'block' ||
+            obox3.style.display == 'block' && obox6.style.display == 'block' && obox9.style.display == 'block' ||
+            obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
+            obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
+
+            turn = 2;
+
+            turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: green;">O</span>) wins! <br>
+            Refresh the page to play again...</b>`
+        }
+    }
+
+
+
+</script>
