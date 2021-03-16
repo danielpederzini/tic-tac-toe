@@ -1,6 +1,8 @@
-// O valor 0 significa vez do X, e o valor 1 significa vez do O
+// Definindo uma variável global "turn": valor 0 significa vez do X, e o valor 1 significa vez do O
 var turn = 0;
 
+/* Definindo uma variável global para cada caixa (div): valor 0 significa que não houve uma jogada na caixa,
+e o valor 1 significa que já houve uma jogada na caixa*/
 var box1 = 0;
 var box2 = 0;
 var box3 = 0;
@@ -11,9 +13,11 @@ var box7 = 0;
 var box8 = 0;
 var box9 = 0;
 
+/* Definindo uma variável global "win": valor 0 significa que nenhum jogador venceu,
+valor 1 significa que algum jogador venceu*/
 var win = 0;
 
-// Verifica de quem é a vez, e se o quadrado estiver vazio faz uma jogada
+// Ao clicar na caixa (div) 1, se o turno for de X e se a caixa estiver vazia, faz uma jogada de X
 function play_box1() {
     if (turn == 0 && xbox1.style.display == 'none' && obox1.style.display == 'none') {
         xbox1.style.display = 'block';
@@ -21,6 +25,7 @@ function play_box1() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
+ // Caso contrário, se o turno for de O e se a caixa estiver vazia, faz uma jogada de O
     else {
         if (turn == 1 && xbox1.style.display == 'none' && obox1.style.display == 'none') {
             obox1.style.display = 'block';
@@ -30,9 +35,10 @@ function play_box1() {
         }
     }
 
+ // Define a variável da caixa como 1, indicando que já houve uma jogada
     box1 = 1;
 
-    // Verifica se a jogada vence o jogo para o jogador 1, se sim, exibe uma mensagem de vitória e para o jogo
+    // Verifica se a jogada vence o jogo para o jogador 1 (X), se sim, exibe uma mensagem de vitória e para o jogo
     if (xbox9.style.display == 'block' && xbox8.style.display == 'block' && xbox7.style.display == 'block' ||
         xbox6.style.display == 'block' && xbox5.style.display == 'block' && xbox4.style.display == 'block' ||
         xbox3.style.display == 'block' && xbox2.style.display == 'block' && xbox1.style.display == 'block' ||
@@ -42,9 +48,13 @@ function play_box1() {
         xbox9.style.display == 'block' && xbox5.style.display == 'block' && xbox1.style.display == 'block' ||
         xbox7.style.display == 'block' && xbox5.style.display == 'block' && xbox3.style.display == 'block') {
 
+        // Define a variável "turn" como 2, assim, nenhuma jogada pode ser feita, parando o jogo
         turn = 2;
+        
+        // Define a variável "win" como 1, indicando que o jogo foi vencido
         win = 1;
 
+        // Exibe uma mensagem de vitória para o jogador 1
         turns.innerHTML = `<b class="turnX"> Player 1 (<span style="color: #0038A8;">X</span>) wins! <br>
            Refresh the page to play again...</b>`
     }
@@ -59,15 +69,20 @@ function play_box1() {
         obox9.style.display == 'block' && obox5.style.display == 'block' && obox1.style.display == 'block' ||
         obox7.style.display == 'block' && obox5.style.display == 'block' && obox3.style.display == 'block') {
 
+        // Define a variável "turn" como 2, assim, nenhuma jogada pode ser feita, parando o jogo
         turn = 2;
+        
+        // Define a variável "win" como 1, indicando que o jogo foi vencido
         win = 1;
 
+        // Exibe uma mensagem de vitória para o jogador 2
         turns.innerHTML = `<b class="turnX"> Player 2 (<span style="color: #009900;">O</span>) wins! <br>
            Refresh the page to play again...</b>`
     }
 
+     // Se todas as caixas (divs) tiverem sido preenchidas, e ninguém venceu o jogo, exibe uma mensagem de empate
     if (box1 == 1 && box2 == 1 && box3 == 1 && box4 == 1 && box5 == 1 && box6 == 1 && box7 == 1 && box8 == 1 && box9 == 1 && win == 0) {
-
+       
         turns.innerHTML = `<b class="turnX">It's a draw! <br>
                Refresh the page to play again...</b>`
     }
