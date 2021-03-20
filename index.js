@@ -59,7 +59,7 @@ function play_box1() {
            Refresh the page to play again...</b>`
     }
 
-    // Verifica se a jogada vence o jogo para o jogador 2, se sim, exibe uma mensagem de vitória e para o jogo
+    // Verifica se a jogada vence o jogo para o jogador 2 (O), se sim, exibe uma mensagem de vitória e para o jogo
     if (obox9.style.display == 'block' && obox8.style.display == 'block' && obox7.style.display == 'block' ||
         obox6.style.display == 'block' && obox5.style.display == 'block' && obox4.style.display == 'block' ||
         obox3.style.display == 'block' && obox2.style.display == 'block' && obox1.style.display == 'block' ||
