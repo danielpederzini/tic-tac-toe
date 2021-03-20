@@ -19,7 +19,7 @@ var win = 0;
 
 // Ao clicar na caixa (div) 1, se o turno for de X e se a caixa estiver vazia, faz uma jogada de X
 function play_box1() {
-    if (turn == 0 && xbox1.style.display == 'none' && obox1.style.display == 'none') {
+    if (turn == 0 && box1 = 0) {
         xbox1.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
@@ -27,7 +27,7 @@ function play_box1() {
     }
  // Caso contrário, se o turno for de O e se a caixa estiver vazia, faz uma jogada de O
     else {
-        if (turn == 1 && xbox1.style.display == 'none' && obox1.style.display == 'none') {
+        if (turn == 1 && box1 = 0) {
             obox1.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
@@ -89,14 +89,14 @@ function play_box1() {
 }
 
 function play_box2() {
-    if (turn == 0 && xbox2.style.display == 'none' && obox2.style.display == 'none') {
+    if (turn == 0 && box2 = 0) {
         xbox2.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
     else {
-        if (turn == 1 && xbox2.style.display == 'none' && obox2.style.display == 'none') {
+        if (turn == 1 && box2 = 0) {
             obox2.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
@@ -146,14 +146,14 @@ function play_box2() {
 }
 
 function play_box3() {
-    if (turn == 0 && xbox3.style.display == 'none' && obox3.style.display == 'none') {
+    if (turn == 0 && box3 = 0) {
         xbox3.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
     else {
-        if (turn == 1 && xbox3.style.display == 'none' && obox3.style.display == 'none') {
+        if (turn == 1 && box3 = 0) {
             obox3.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
@@ -203,14 +203,14 @@ function play_box3() {
 }
 
 function play_box4() {
-    if (turn == 0 && xbox4.style.display == 'none' && obox4.style.display == 'none') {
+    if (turn == 0 && box4 = 0) {
         xbox4.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
     else {
-        if (turn == 1 && xbox4.style.display == 'none' && obox4.style.display == 'none') {
+        if (turn == 1 && box4 = 0) {
             obox4.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
@@ -260,14 +260,14 @@ function play_box4() {
 }
 
 function play_box5() {
-    if (turn == 0 && xbox5.style.display == 'none' && obox5.style.display == 'none') {
+    if (turn == 0 && box5 = 0) {
         xbox5.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
     else {
-        if (turn == 1 && xbox5.style.display == 'none' && obox5.style.display == 'none') {
+        if (turn == 1 && box5 = 0) {
             obox5.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
@@ -317,14 +317,14 @@ function play_box5() {
 }
 
 function play_box6() {
-    if (turn == 0 && xbox6.style.display == 'none' && obox6.style.display == 'none') {
+    if (turn == 0 && box6 = 0) {
         xbox6.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
     else {
-        if (turn == 1 && xbox6.style.display == 'none' && obox6.style.display == 'none') {
+        if (turn == 1 && box6 = 0) {
             obox6.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
@@ -374,14 +374,14 @@ function play_box6() {
 }
 
 function play_box7() {
-    if (turn == 0 && xbox7.style.display == 'none' && obox7.style.display == 'none') {
+    if (turn == 0 && box7 = 0) {
         xbox7.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
     else {
-        if (turn == 1 && xbox7.style.display == 'none' && obox7.style.display == 'none') {
+        if (turn == 1 && box7 = 0) {
             obox7.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
@@ -431,14 +431,14 @@ function play_box7() {
 }
 
 function play_box8() {
-    if (turn == 0 && xbox8.style.display == 'none' && obox8.style.display == 'none') {
+    if (turn == 0 && box8 = 0) {
         xbox8.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
     else {
-        if (turn == 1 && xbox8.style.display == 'none' && obox8.style.display == 'none') {
+        if (turn == 1 && box8 = 0) {
             obox8.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
@@ -488,14 +488,14 @@ function play_box8() {
 }
 
 function play_box9() {
-    if (turn == 0 && xbox9.style.display == 'none' && obox9.style.display == 'none') {
+    if (turn == 0 && box9 = 0) {
         xbox9.style.display = 'block';
         turn = 1;
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
     else {
-        if (turn == 1 && xbox9.style.display == 'none' && obox9.style.display == 'none') {
+        if (turn == 1 && box9 = 0) {
             obox9.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
