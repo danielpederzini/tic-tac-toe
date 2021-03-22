@@ -26,13 +26,11 @@ function play_box1() {
         turnO.style.display = 'block';
     }
  // Caso contrário, se o turno for de O e se a caixa estiver vazia, faz uma jogada de O
-    else {
-        if (turn == 1 && box1 == 0) {
+    else if (turn == 1 && box1 == 0) {
             obox1.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
  // Define a variável da caixa como 1, indicando que já houve uma jogada
@@ -95,13 +93,11 @@ function play_box2() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
-    else {
-        if (turn == 1 && box2 == 0) {
+    else if (turn == 1 && box2 == 0) {
             obox2.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
     box2 = 1;
@@ -152,13 +148,11 @@ function play_box3() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
-    else {
-        if (turn == 1 && box3 == 0) {
+    else if (turn == 1 && box3 == 0) {
             obox3.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
     box3 = 1;
@@ -209,13 +203,11 @@ function play_box4() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
-    else {
-        if (turn == 1 && box4 == 0) {
+    else if (turn == 1 && box4 == 0) {
             obox4.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
     box4 = 1;
@@ -266,13 +258,11 @@ function play_box5() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
-    else {
-        if (turn == 1 && box5 == 0) {
+    else if (turn == 1 && box5 == 0) {
             obox5.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
     box5 = 1;
@@ -323,13 +313,11 @@ function play_box6() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
-    else {
-        if (turn == 1 && box6 == 0) {
+    else if (turn == 1 && box6 == 0) {
             obox6.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
     box6 = 1;
@@ -380,13 +368,11 @@ function play_box7() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
-    else {
-        if (turn == 1 && box7 == 0) {
+    else if (turn == 1 && box7 == 0) {
             obox7.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
     box7 = 1;
@@ -437,13 +423,11 @@ function play_box8() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
-    else {
-        if (turn == 1 && box8 == 0) {
+    else if (turn == 1 && box8 == 0) {
             obox8.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
     box8 = 1;
@@ -494,13 +478,11 @@ function play_box9() {
         turnX.style.display = 'none';
         turnO.style.display = 'block';
     }
-    else {
-        if (turn == 1 && box9 == 0) {
+    else if (turn == 1 && box9 == 0) {
             obox9.style.display = 'block';
             turn = 0;
             turnX.style.display = 'block';
             turnO.style.display = 'none';
-        }
     }
 
     box9 = 1;
